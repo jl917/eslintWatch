@@ -3,10 +3,11 @@
   "version": "1.0.0",
   "description": "",
   "bin": {
-    "jeslint": "a"
+    "jeslint": "dist/index.js",
+    "njeslint": "dist/index.js"
   },
   "scripts": {
-    "build": "build"
+    "build": "node scripts/build.js"
   },
   "repository": {
     "type": "git",
@@ -19,17 +20,38 @@
     "url": "https://github.com/jl917/eslintWatch/issues"
   },
   "homepage": "https://github.com/jl917/eslintWatch#readme",
-
   "files": [
-    "dist",
-    "./tscofnig.json"
+    "dist"
   ],
   "devDependencies": {
     "@semantic-release/changelog": "6.0.1",
     "@semantic-release/git": "10.0.1",
+    "@types/eslint": "^8.4.6",
+    "@types/fs-extra": "9.0.13",
+    "@types/glob-watcher": "5.0.2",
+    "arg": "5.0.2",
+    "enquirer": "2.3.6",
+    "esbuild": "0.15.5",
+    "execa": "6.1.0",
+    "fs-extra": "10.1.0",
     "semantic-release": "18.0.0"
   },
   "publishConfig": {
     "access": "public"
+  },
+  "dependencies": {
+    "@typescript-eslint/eslint-plugin": "5.33.1",
+    "@typescript-eslint/parser": "5.33.1",
+    "eslint": "8.22.0",
+    "eslint-config-airbnb": "19.0.4",
+    "eslint-config-prettier": "8.0.0",
+    "eslint-plugin-import": "2.26.0",
+    "eslint-plugin-jsx-a11y": "6.6.1",
+    "eslint-plugin-prettier": "4.2.1",
+    "eslint-plugin-react": "7.30.1",
+    "eslint-plugin-react-hooks": "4.6.0",
+    "glob-watcher": "5.0.5",
+    "prettier": "2.7.1",
+    "pretty-quick": "3.1.3"
   }
 }
