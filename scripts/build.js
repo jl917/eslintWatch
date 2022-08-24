@@ -1,4 +1,13 @@
 const esbuild = require('esbuild');
+const package = require('../package.json');
+const { execSync } = require('child_process');
+
+const branch = execSync('git branch --show-current').toString().trim();
+
+const outfileMap = {
+  master: package.bin.jlint,
+  next: package.bin.next_jlint,
+}
 
 esbuild.buildSync({
   entryPoints: ['src/index.ts'],
@@ -6,21 +15,7 @@ esbuild.buildSync({
   write: true,
   platform: 'node',
   target: ['node14'],
-  outfile: 'dist/index.js',
+  outfile: outfileMap[branch] || package.bin.jlint,
   minify: true,
   banner: { js: '#!/usr/bin/env node' },
-});
-
-esbuild.buildSync({
-  entryPoints: {
-    'config/react': 'src/config/react.js',
-  },
-  bundle: true,
-  write: true,
-  platform: 'node',
-  format: 'cjs',
-  target: ['node14'],
-  outdir: 'dist',
-  minify: true,
-  external: ['esbuild']
 });

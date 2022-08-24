@@ -1,15 +1,8 @@
 import { resolve } from 'path';
-import { lstatSync } from 'fs-extra';
+import { sync } from 'glob';
+import { filesPattern, ignore } from './config';
 
-export const getBinPath = () => {
-  const globalPath = resolve(__dirname, '../node_modules/.bin');
-  const localPath = resolve(__dirname, '../../../.bin');
-  let binPath;
-  try {
-    lstatSync(globalPath).isDirectory();
-    binPath = globalPath;
-  } catch {
-    binPath = localPath;
-  }
-  return binPath;
-};
+// 포맷 가져오기
+export const formatPath = (name: string): string => resolve(__dirname, `../node_modules/eslint/lib/cli-engine/formatters/${name}`);
+// ignore 추가
+export const getLintFileList = (): string[] => sync(filesPattern, { ignore });

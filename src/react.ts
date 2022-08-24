@@ -1,9 +1,9 @@
+import { Linter } from 'eslint';
 import { resolve } from 'path';
-import tsConfig from '../../tsconfig.json';
+import tsConfig from '../tsconfig.json';
 import prettierConfig from './prettier';
 
-
-export default {
+export const reactConfig: Linter.Config = {
   parser: '@typescript-eslint/parser',
   parserOptions: {
     ecmaFeatures: {
@@ -41,5 +41,5 @@ export default {
     'no-use-before-define': ['off'],
     'import/no-extraneous-dependencies': ['off'],
     '@typescript-eslint/explicit-module-boundary-types': ['off'],
-  },
+  }
 };

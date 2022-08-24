@@ -1,40 +1,32 @@
-import { execaSync, execa, SyncOptions } from 'execa';
-import { getBinPath } from './utils';
-import { resolve } from 'path';
-import watch from 'glob-watcher';
-
+import { reactConfig } from './react';
 import { ESLint } from 'eslint';
-import configReact from './config/react';
+import { formatPath, getLintFileList } from './utils';
 
-// export const BIN_PATH = getBinPath();
-// export const BIN_ESLINT = `${BIN_PATH}/eslint`;
-// export const STDIO_OPTION: SyncOptions = { stdio: 'inherit' };
+interface ICommand {
+  targets: null | string[];
+  run: any;
+}
 
-// const watcher = watch(['**/*.js', '**/*.ts', '**/*.jsx', '**/*.tsx', '**/*.vue']);
+const configMap = {
+  react: reactConfig,
+  vue: reactConfig,
+}
 
-// eslint 오류로 잠시 보류
-const eslint = new ESLint({
-  // fix: false,
-  // baseConfig: configReact,
-});
-
-export const command = {
-  run: async (type: any) => {
-    // const results = await eslint.lintFiles(["**/*.ts"]);
-    // const formatter = await eslint.loadFormatter("json");
-    // const resultText = formatter.format(results);
-    // console.log(resultText);
-    // try {
-    //   watcher.on('change', function (path, stat) {
-    //     console.log(path)
-    //   });
-    //   watcher.on('add', function (path, stat) {
-    //     // 복붙시 2번 실행 될수 있음.
-    //     console.log(path)
-    //   });
-    //   execaSync(BIN_ESLINT, ['-c', '-f', 'json', resolve(__dirname, `config/${type}.js`)], STDIO_OPTION);
-    // } catch {
-    //   // console.log('❗️ Error: tsc failed.');
-    // }
+export const command: ICommand = {
+  targets: null,
+  run: async function (type: framework, mode: mode) {
+    const eslint = new ESLint({
+      fix: false,
+      baseConfig: configMap[type],
+    });
+    const results = await eslint.lintFiles(this.targets || getLintFileList());
+    const formatter = await eslint.loadFormatter(formatPath('stylish'));
+    const resultText = formatter.format(results);
+    console.log(resultText);
+    if (mode === 'watch' || mode === 'fixWatch') {
+      const formatterJson = await eslint.loadFormatter(formatPath('json'));
+      const resultJson = formatterJson.format(results);
+      command.targets = JSON.parse(resultJson as string).map((e: ESLint.LintResult) => e.filePath);
+    }
   },
 }
