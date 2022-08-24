@@ -1,6 +1,6 @@
 {
   "name": "@julong/eslint-watch",
-  "version": "1.0.0",
+  "version": "1.0.0-next.1",
   "description": "",
   "bin": {
     "jlint": "dist/index.js",
