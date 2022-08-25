@@ -1,7 +1,6 @@
-# title
+# Readme
 
-This is ...
-
+eslint 기능을 프로젝트 내부에서 분리
 
 
 ## Table of Contents
@@ -10,7 +9,6 @@ This is ...
 - [Installation](#installation)
 - [Usage](#usage)
 - [Maintainers](#maintainers)
-- [Thanks](#thanks)
 - [Contributing](#contributing)
 - [License](#license)
 
@@ -18,20 +16,34 @@ This is ...
 
 ## Background
 
+eslint 기능을 프로젝트 내부에서 분리
 
 
 
 ## Installation
 
 ```sh
-
+npm install -g @julong/eslintWatch
+npm install --save-dev @julong/eslintWatch
 ```
-
-
 
 ## Usage
 
+```sh
+jlint -t react -m default
+```
 
+### type
+- react
+- vue(...준비중)
+- svelte(...준비중)
+
+#### mode
+
+- default
+- watch
+- fix
+- fixWatch
 
 
 
@@ -49,4 +61,4 @@ Anyone is welcome to participate in the maintenance and development of this proj
 
 ## License
 
-[MIT](https://github.com/jl917/jnpkg/blob/master/LICENSE)
+[MIT](https://github.com/jl917/eslintWatch/blob/master/LICENSE)
