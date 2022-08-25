@@ -1,3 +1,10 @@
+# [1.0.0-next.3](https://github.com/jl917/eslintWatch/compare/v1.0.0-next.2...v1.0.0-next.3) (2022-08-25)
+
+
+### Features
+
+* fix, fixWatch기능 적용 ([ed4e76a](https://github.com/jl917/eslintWatch/commit/ed4e76a88da9da0b175d16e083794b885d9612fb))
+
 # [1.0.0-next.2](https://github.com/jl917/eslintWatch/compare/v1.0.0-next.1...v1.0.0-next.2) (2022-08-24)
 
 
