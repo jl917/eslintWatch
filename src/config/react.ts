@@ -1,6 +1,6 @@
 import { Linter } from 'eslint';
 import { resolve } from 'path';
-import tsConfig from '../tsconfig.json';
+import tsConfig from '../../tsconfig.json';
 import prettierConfig from './prettier';
 
 export const reactConfig: Linter.Config = {

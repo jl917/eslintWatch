@@ -19,3 +19,17 @@ esbuild.buildSync({
   minify: true,
   banner: { js: '#!/usr/bin/env node' },
 });
+
+esbuild.buildSync({
+  entryPoints: {
+    'formatters/json':  'src/formatters/json.js',
+    'formatters/stylish': 'src/formatters/stylish.js',
+  },
+  bundle: true,
+  write: true,
+  platform: 'node',
+  target: ['node14'],
+  minify: true,
+  external: ['esbuild'],
+  outdir: 'dist',
+});

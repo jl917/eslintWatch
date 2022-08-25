@@ -12,7 +12,6 @@ const args = arg({
   '-t': '--type', // react | vue
   '-m': '--mode', // default | watch | fix | fixWatch
 });
-
 const type: any = args['--type'] || 'react';
 const mode: any = args['--mode'] || 'default';
 
@@ -35,5 +34,3 @@ if (mode === 'watch' || mode === 'fixWatch') {
 }
 
 check();
-// console.log(args);
-

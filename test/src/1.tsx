@@ -1,10 +1,10 @@
-const App = () => {
-  return <div>
-    <h1>hello</h1>
-  </div>
+function App() {
+  return (
+    <div>
+      <h1>hello</h1>
+    </div>
+  );
 }
 
 export default App;
-123
-
-
+123;
