@@ -26,8 +26,8 @@
   "devDependencies": {
     "@semantic-release/changelog": "6.0.1",
     "@semantic-release/git": "10.0.1",
-    "@types/eslint": "^8.4.6",
-    "@types/glob": "^7.2.0",
+    "@types/eslint": "8.4.6",
+    "@types/glob": "7.2.0",
     "@types/glob-watcher": "5.0.2",
     "@types/lodash-es": "^4.17.6",
     "arg": "5.0.2",
@@ -42,7 +42,7 @@
   "dependencies": {
     "@typescript-eslint/eslint-plugin": "5.33.1",
     "@typescript-eslint/parser": "5.33.1",
-    "eslint": "^8.22.0",
+    "eslint": "8.22.0",
     "eslint-config-airbnb": "19.0.4",
     "eslint-config-prettier": "8.0.0",
     "eslint-plugin-import": "2.26.0",
