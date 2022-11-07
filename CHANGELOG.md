@@ -1,3 +1,10 @@
+## [1.0.2](https://github.com/jl917/eslintWatch/compare/v1.0.1...v1.0.2) (2022-11-07)
+
+
+### Bug Fixes
+
+* 재배포 ([b146260](https://github.com/jl917/eslintWatch/commit/b1462600e490a05cb3078d6018b69271429d323d))
+
 ## [1.0.1](https://github.com/jl917/eslintWatch/compare/v1.0.0...v1.0.1) (2022-11-07)
 
 
