@@ -23,8 +23,8 @@ eslint 기능을 프로젝트 내부에서 분리
 ## Installation
 
 ```sh
-npm install -g @julong/eslintWatch
-npm install --save-dev @julong/eslintWatch
+npm install -g @julong/eslint-watch
+npm install --save-dev @julong/eslint-watch
 ```
 
 ## Usage
