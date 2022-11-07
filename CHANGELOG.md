@@ -1,3 +1,10 @@
+# [1.0.0-next.4](https://github.com/jl917/eslintWatch/compare/v1.0.0-next.3...v1.0.0-next.4) (2022-11-07)
+
+
+### Bug Fixes
+
+* 오타 수정 ([fab4508](https://github.com/jl917/eslintWatch/commit/fab450899045fc7ff2d0cd2d3d2e98d1b27ccafb))
+
 # [1.0.0-next.3](https://github.com/jl917/eslintWatch/compare/v1.0.0-next.2...v1.0.0-next.3) (2022-08-25)
 
 
